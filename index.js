@@ -41,9 +41,11 @@ if(cmd === `${prefix}פרופיל`){
   .setAuthor(`${user.username}`)
   .setImage(user.displayAvatarURL)
   .setColor('RANDOM')
-  .setFooter(`יוצרי הבוט: avishaiDV#0069`);
+  .setFooter(`יוצרי הבוט: avishaiDV & NiceGames`);
   message.channel.send(embed)
-  .catch(console.error)
+
+          console.log(`${message.author.tag} השתמש בפקודה פרופיל!`);
+    return logsCommands.send(`${message.author.tag} השתמש בפקודה פרופיל!`);
 }
 
 //test
@@ -104,6 +106,8 @@ if(cmd === `${prefix}פינג`){
     message.delete().catch(O_o=>{}); 
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
+            console.log(`${message.author.tag} השתמש בפקודת חזור אחרי`);
+    return logsCommands.send(`${message.author.tag} השתמש בפקודה חזור אחרי`);
   }
  
 //report command
@@ -194,6 +198,8 @@ if(cmd === (`${prefix}מיאני`)) {
   .addField("ID", bot.user.id)
   .setFooter("נוצר על ידי: avishaidv & NiceGames");
   return message.channel.send(botembed);
+          console.log(`${message.author.tag} השתמש בפקודת מי אני!`);
+    return logsCommands.send(`${message.author.tag} השתמש בפקודת מי אני!`);
 }
 
 //spotify command

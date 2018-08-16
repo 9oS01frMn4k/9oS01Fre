@@ -80,7 +80,8 @@ if(cmd === `${prefix}פינג`){
   .addField("מרחיק", `<@${message.author.id}> ID ${message.author.id}`)
   .addField("חדר מרחיק", message.channel)
   .addField("זמן הרחקה", message.createdAt)
-  .addField("סיבה", kReason);
+  .addField("סיבה", kReason)
+  .setFooter("נוצר על ידי: avishaidv & NiceGames");
 
   console.log(`${message.author.tag} ניסה להעיף מישהו!`);
   return logsCommands.send(`${message.author.tag} ניסה להעיף מישהו!`);
@@ -118,7 +119,8 @@ if(cmd === `${prefix}פינג`){
       .addField("מדווח", `${message.author} ID המדווח ${message.author.id}`)
       .addField("חדר", message.channel)
       .addField("זמן הדיווח", message.createdAt)
-      .addField("סיבה", reason);
+      .addField("סיבה", reason)
+       .setFooter("נוצר על ידי: avishaidv & NiceGames");
      
 
 
@@ -144,7 +146,7 @@ if(cmd === `${prefix}פינג`){
     .setDescription("איסטראג וולדבעי במיוחד!")
     .addField("וולדבע נודר!", message.createdAt)
     .setColor('RANDOM')
-    .setFooter("יוצרי הבוט: avishaiDV#0069");
+   .setFooter("נוצר על ידי: avishaidv & NiceGames");
 
 
     message.channel.send(embed);
@@ -166,7 +168,7 @@ if(cmd === `${prefix}פינג`){
       .addField("תאריך כניסתך לשרת", message.member.joinedAt)
       .addField("מספר אנשים בשרת", message.guild.memberCount)
       .addField("ID", message.guild.id)
-      .setFooter("יוצרי הבוט: avishaiDV#0069");
+      .setFooter("נוצר על ידי: avishaidv & NiceGames");
 
 
       return message.channel.send(serverembed);
@@ -188,8 +190,8 @@ if(cmd === (`${prefix}מיאני`)) {
   .setThumbnail(bicon)
   .addField("שם הבוט", bot.user.username)
   .addField("תאריך יצור", bot.user.createdAt)
-  .addField("ID", bot.user.id);
- .setFooter("יוצרי הבוט: avishaiDV#0069")
+  .addField("ID", bot.user.id)
+  .setFooter("נוצר על ידי: avishaidv & NiceGames");
   return message.channel.send(botembed);
 }
 

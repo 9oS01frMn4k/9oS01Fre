@@ -1,5 +1,7 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
+const got = require(`got`);
+const api= 'dc6zaTOxFJmzC';
 
 const bot = new Discord.Client({disableEveryone: true});
  bot.on('ready', () => {
@@ -33,6 +35,22 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 //---------------------------------------------------------------------------------------------
+ 
+   //gif
+  if(cmd === `${prefix}גיף`){
+    if(args.length < 1) return message.channel.send("בבקשה תכתוב איזה גיף אתה מחפש")
+    const res = await got(`http://api.giphy.com/v1/gifs/random?api_key=${api}&tag=${encodeURIComponent(args.join(" "))}`, {json: true})
+    if(!res || !res.body || !res.body.data) return message.channel.send("לא הצלחתי למצוא גיף שמתאים לחיפוש שלך!")
+
+    let embed = new Discord.RichEmbed()
+    .setImage(res.body.data.image_url)
+    .setAuthor(message.author.tag)
+    .setFooter("יוצרי הבוט: avishaidv & NiceGames");
+
+    message.channel.send(embed)
+  }
+ 
+ 
   //profile image command
 if(cmd === `${prefix}פרופיל`){
   let user = message.mentions.users.first() || message.author;

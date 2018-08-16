@@ -32,7 +32,7 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-
+//---------------------------------------------------------------------------------------------
   //profile image command
 if(cmd === `${prefix}פרופיל`){
   let user = message.mentions.users.first() || message.author;
@@ -40,7 +40,7 @@ if(cmd === `${prefix}פרופיל`){
   .setAuthor(`${user.username}`)
   .setImage(user.displayAvatarURL)
   .setColor('RANDOM')
-  .setFooter(`יוצר הבוט: avishaiDV#0069`);
+  .setFooter(`יוצרי הבוט: avishaiDV#0069 + 🌟𝑶𝒓𝒊 | 𝓝𝓲𝓬𝓮𝓖𝓪𝓶𝓮𝓼🌟⚒#2030`);
   message.channel.send(embed)
   .catch(console.error)
 }
@@ -50,6 +50,8 @@ if(cmd === `${prefix}פרופיל`){
       let embed = new Discord.RichEmbed()
       .setThumbnail()
       message.channel.send(embed)
+         console.log(`${message.author.tag} השתמש בפקודת נסיון!`);
+    return logsCommands.send(`${message.author.tag} השתמש בפקודת נסיון!`);
 
     }
 
@@ -60,30 +62,10 @@ if(cmd === `${prefix}פינג`){
  let embed = new Discord.RichEmbed()
  .addField(message.author.ping);
  message.channel.send(embed)
+     console.log(`${message.author.tag} השתמש בפקודת פינג!`);
+    return logsCommands.send(`${message.author.tag} השתמש בפקודה פינג!`);
 }
 
- //say
-  if (cmd === `${prefix}תגיד`){
-    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
-    // To get the "message" itself we join the `args` back into a string with spaces: 
-    const sayMessage = args.join(" ");
-    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-    message.delete().catch(O_o=>{}); 
-    // And we get the bot to say the thing: 
-    message.channel.send(sayMessage);
-  }
- 
- //say command
-  if (cmd === `${prefix}תגיד`){
-    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
-    // To get the "message" itself we join the `args` back into a string with spaces: 
-    const sayMessage = args.join(" ");
-    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-    message.delete().catch(O_o=>{}); 
-    // And we get the bot to say the thing: 
-    message.channel.send(sayMessage);
-  }
- 
 //kick command
   if(cmd === `${prefix}העף`){
      let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -100,8 +82,8 @@ if(cmd === `${prefix}פינג`){
   .addField("זמן הרחקה", message.createdAt)
   .addField("סיבה", kReason);
 
-  console.log(`${message.author.tag} שלח לי הודעה פרטית!`);
-  return logsCommands.send(`${message.author.tag} שלח לי הודעה פרטית!`);
+  console.log(`${message.author.tag} ניסה להעיף מישהו!`);
+  return logsCommands.send(`${message.author.tag} ניסה להעיף מישהו!`);
 
   let kickChannel = message.guild.channels.find(`name`, "kicks-and-bans")
   if(!kickChannel) return message.channel.send("לא הצלחתי למצוא חדר kicks-and-bans!")
@@ -111,6 +93,17 @@ if(cmd === `${prefix}פינג`){
     return;
   }
 
+ //say command
+  if (cmd === `${prefix}תגיד`){
+    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
+    // To get the "message" itself we join the `args` back into a string with spaces: 
+    const sayMessage = args.join(" ");
+    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+    message.delete().catch(O_o=>{}); 
+    // And we get the bot to say the thing: 
+    message.channel.send(sayMessage);
+  }
+ 
 //report command
     if(cmd === `${prefix}דווח`){
       let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -126,6 +119,7 @@ if(cmd === `${prefix}פינג`){
       .addField("חדר", message.channel)
       .addField("זמן הדיווח", message.createdAt)
       .addField("סיבה", reason);
+     
 
 
       if(!reason) return message.channel.send("בבקשה ציין את סיבת הדיווח");
@@ -150,7 +144,7 @@ if(cmd === `${prefix}פינג`){
     .setDescription("איסטראג וולדבעי במיוחד!")
     .addField("וולדבע נודר!", message.createdAt)
     .setColor('RANDOM')
-    .setFooter("יוצר הבוט: avishaiDV#0069");
+    .setFooter("יוצרי הבוט: avishaiDV#0069 + 🌟𝑶𝒓𝒊 | 𝓝𝓲𝓬𝓮𝓖𝓪𝓶𝓮𝓼🌟⚒#2030");
 
 
     message.channel.send(embed);
@@ -170,16 +164,20 @@ if(cmd === `${prefix}פינג`){
       .addField("שם השרת", message.guild.name)
       .addField("תאריך הקמת השרת", message.guild.createdAt)
       .addField("תאריך כניסתך לשרת", message.member.joinedAt)
-      .addField("מספר אנשים ב", message.guild.memberCount)
+      .addField("מספר אנשים בשרת", message.guild.memberCount)
       .addField("ID", message.guild.id)
-      .setFooter("יוצר הבוט: avishaiDV#0069");
+      .setFooter("יוצרי הבוט: avishaiDV#0069 + 🌟𝑶𝒓𝒊 | 𝓝𝓲𝓬𝓮𝓖𝓪𝓶𝓮𝓼🌟⚒#2030");
 
 
       return message.channel.send(serverembed);
+         console.log(`${message.author.tag} השתמש בפקודה מידע על השרת!`);
+    return logsCommands.send(`${message.author.tag} השתמש בפקודה מידע על השרת!`);
     }
 //simple test command
     if(cmd === `${prefix}שלום`){
-      return message.channel.send("Hi there!");
+      return message.channel.send("שלום לך!");
+         console.log(`${message.author.tag} השתמש בפקודה שלום!`);
+    return logsCommands.send(`${message.author.tag} שלח לי הודעה פרטית!`);
           }
 //bot info
 if(cmd === (`${prefix}מיאני`)) {
@@ -191,6 +189,7 @@ if(cmd === (`${prefix}מיאני`)) {
   .addField("שם הבוט", bot.user.username)
   .addField("תאריך יצור", bot.user.createdAt)
   .addField("ID", bot.user.id);
+ .setFooter("יוצרי הבוט: avishaiDV#0069 + 🌟𝑶𝒓𝒊 | 𝓝𝓲𝓬𝓮𝓖𝓪𝓶𝓮𝓼🌟⚒#2030")
   return message.channel.send(botembed);
 }
 
@@ -214,7 +213,7 @@ if(cmd === (`${prefix}מיאני`)) {
           .addField('אלבום', trackAlbum, true)
           .addField('יוצר', trackAuthor, false)
           .addField('קישור להאזנה בספוטיפיי:', `${trackURL}`, false)
-          .setFooter("יוצר הבוט: avishaiDV#0069")
+          .setFooter("יוצרי הבוט: avishaiDV#0069 + 🌟𝑶𝒓𝒊 | 𝓝𝓲𝓬𝓮𝓖𝓪𝓶𝓮𝓼🌟⚒#2030")
           message.channel.send(embed)
       } else {
           message.channel.send('המשתמש לא שומע מוזיקה כרגע או שספוטיפיי לא דלוק בפליינג!');

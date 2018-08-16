@@ -40,7 +40,7 @@ if(cmd === `${prefix}פרופיל`){
   .setAuthor(`${user.username}`)
   .setImage(user.displayAvatarURL)
   .setColor('RANDOM')
-  .setFooter(`יוצרי הבוט: avishaiDV#0069 + 🌟𝑶𝒓𝒊 | 𝓝𝓲𝓬𝓮𝓖𝓪𝓶𝓮𝓼🌟⚒#2030`);
+  .setFooter(`יוצרי הבוט: avishaiDV#0069`);
   message.channel.send(embed)
   .catch(console.error)
 }
@@ -144,7 +144,7 @@ if(cmd === `${prefix}פינג`){
     .setDescription("איסטראג וולדבעי במיוחד!")
     .addField("וולדבע נודר!", message.createdAt)
     .setColor('RANDOM')
-    .setFooter("יוצרי הבוט: avishaiDV#0069 + 🌟𝑶𝒓𝒊 | 𝓝𝓲𝓬𝓮𝓖𝓪𝓶𝓮𝓼🌟⚒#2030");
+    .setFooter("יוצרי הבוט: avishaiDV#0069");
 
 
     message.channel.send(embed);
@@ -166,7 +166,7 @@ if(cmd === `${prefix}פינג`){
       .addField("תאריך כניסתך לשרת", message.member.joinedAt)
       .addField("מספר אנשים בשרת", message.guild.memberCount)
       .addField("ID", message.guild.id)
-      .setFooter("יוצרי הבוט: avishaiDV#0069 + 🌟𝑶𝒓𝒊 | 𝓝𝓲𝓬𝓮𝓖𝓪𝓶𝓮𝓼🌟⚒#2030");
+      .setFooter("יוצרי הבוט: avishaiDV#0069");
 
 
       return message.channel.send(serverembed);
@@ -189,7 +189,7 @@ if(cmd === (`${prefix}מיאני`)) {
   .addField("שם הבוט", bot.user.username)
   .addField("תאריך יצור", bot.user.createdAt)
   .addField("ID", bot.user.id);
- .setFooter("יוצרי הבוט: avishaiDV#0069 + 🌟𝑶𝒓𝒊 | 𝓝𝓲𝓬𝓮𝓖𝓪𝓶𝓮𝓼🌟⚒#2030")
+ .setFooter("יוצרי הבוט: avishaiDV#0069")
   return message.channel.send(botembed);
 }
 
@@ -213,7 +213,7 @@ if(cmd === (`${prefix}מיאני`)) {
           .addField('אלבום', trackAlbum, true)
           .addField('יוצר', trackAuthor, false)
           .addField('קישור להאזנה בספוטיפיי:', `${trackURL}`, false)
-          .setFooter("יוצרי הבוט: avishaiDV#0069 + 🌟𝑶𝒓𝒊 | 𝓝𝓲𝓬𝓮𝓖𝓪𝓶𝓮𝓼🌟⚒#2030")
+          .setFooter("יוצרי הבוט: avishaiDV#0069")
           message.channel.send(embed)
       } else {
           message.channel.send('המשתמש לא שומע מוזיקה כרגע או שספוטיפיי לא דלוק בפליינג!');

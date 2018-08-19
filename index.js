@@ -47,9 +47,9 @@ bot.on("message", async message => {
     .setFooter("יוצרי הבוט: avishaiDV & NiceGames")
     .setColor('RANDOM')
     .setThumbnail(icon);
+     message.delete().catch(O_o=>{});
 
     message.channel.send(embed)
-         message.delete().catch(O_o=>{});
     console.log(`${message.author.tag} ביקש עזרה מהבוט!`);
     return logsCommands.send(`${message.author.tag} ביקש עזרה מהבוט!`);
 }
@@ -62,8 +62,8 @@ if(cmd === `${prefix}פרופיל`){
   .setImage(user.displayAvatarURL)
   .setColor('RANDOM')
   .setFooter(`יוצרי הבוט: avishaiDV & NiceGames`);
+   message.delete().catch(O_o=>{});
   message.channel.send(embed)
-       message.delete().catch(O_o=>{});
 
           console.log(`${message.author.tag} השתמש בפקודה פרופיל!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודה פרופיל!`);
@@ -73,8 +73,8 @@ if(cmd === `${prefix}פרופיל`){
     if(cmd === `${prefix}test`){
       let embed = new Discord.RichEmbed()
       .setThumbnail()
+      message.delete().catch(O_o=>{});
       message.channel.send(embed)
-           message.delete().catch(O_o=>{});
          console.log(`${message.author.tag} השתמש בפקודת נסיון!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודת נסיון!`);
 
@@ -86,8 +86,8 @@ if(cmd === `${prefix}פרופיל`){
 if(cmd === `${prefix}פינג`){
  let embed = new Discord.RichEmbed()
  .addField(message.author.ping);
+     message.delete().catch(O_o=>{});
  message.channel.send(embed)
- message.delete().catch(O_o=>{});
      console.log(`${message.author.tag} השתמש בפקודת פינג!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודה פינג!`);
 }
@@ -175,10 +175,10 @@ if(cmd === `${prefix}פינג`){
     .addField("וולדבע נודר!", message.createdAt)
     .setColor('RANDOM')
    .setFooter("נוצר על ידי: avishaidv & NiceGames");
-
+     message.delete().catch(O_o=>{});
 
     message.channel.send(embed);
-           message.delete().catch(O_o=>{});
+
     console.log(`${message.author.tag} השתמש בוולדבע!`);
     return logsCommands.send(`${message.author.tag} השתמש בוולדבע!!`);
 
@@ -199,16 +199,16 @@ if(cmd === `${prefix}פינג`){
       .addField("ID", message.guild.id)
       .setFooter("נוצר על ידי: avishaidv & NiceGames");
 
+          message.delete().catch(O_o=>{});
 
       return message.channel.send(serverembed);
-           message.delete().catch(O_o=>{});
          console.log(`${message.author.tag} השתמש בפקודה מידע על השרת!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודה מידע על השרת!`);
     }
 //simple test command
     if(cmd === `${prefix}שלום`){
+      message.delete().catch(O_o=>{});
       return message.channel.send("שלום לך!");
-           message.delete().catch(O_o=>{});
          console.log(`${message.author.tag} השתמש בפקודה שלום!`);
     return logsCommands.send(`${message.author.tag} שלח לי הודעה פרטית!`);
           }
@@ -223,8 +223,8 @@ if(cmd === (`${prefix}מיאני`)) {
   .addField("תאריך יצור", bot.user.createdAt)
   .addField("ID", bot.user.id)
   .setFooter("נוצר על ידי: avishaidv & NiceGames");
+      message.delete().catch(O_o=>{});
   return message.channel.send(botembed);
-       message.delete().catch(O_o=>{});
           console.log(`${message.author.tag} השתמש בפקודת מי אני!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודת מי אני!`);
 }

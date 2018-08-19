@@ -34,6 +34,26 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 //---------------------------------------------------------------------------------------------
+ 
+ 
+ //help
+  if(cmd === `${prefix}עזרה`){
+    let icon = bot.user.displayAvatarURL;
+    let embed =  new Discord.RichEmbed()
+    .setDescription("עזרה")
+    .setThumbnail(bot.user.displayAvatarURL)
+    .addField("prefix", `>`)
+    .addField("Commands", `http://play.mikmak.co.il`)
+    .setFooter("יוצרי הבוט: avishaiDV & NiceGames")
+    .setColor('RANDOM')
+    .setThumbnail(icon);
+
+    message.channel.send(embed)
+         message.delete().catch(O_o=>{});
+    console.log(`${message.author.tag} ביקש עזרה מהבוט!`);
+    return logsCommands.send(`${message.author.tag} ביקש עזרה מהבוט!`);
+}
+ 
   //profile image command
 if(cmd === `${prefix}פרופיל`){
   let user = message.mentions.users.first() || message.author;
@@ -43,6 +63,7 @@ if(cmd === `${prefix}פרופיל`){
   .setColor('RANDOM')
   .setFooter(`יוצרי הבוט: avishaiDV & NiceGames`);
   message.channel.send(embed)
+       message.delete().catch(O_o=>{});
 
           console.log(`${message.author.tag} השתמש בפקודה פרופיל!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודה פרופיל!`);
@@ -53,6 +74,7 @@ if(cmd === `${prefix}פרופיל`){
       let embed = new Discord.RichEmbed()
       .setThumbnail()
       message.channel.send(embed)
+           message.delete().catch(O_o=>{});
          console.log(`${message.author.tag} השתמש בפקודת נסיון!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודת נסיון!`);
 
@@ -65,6 +87,7 @@ if(cmd === `${prefix}פינג`){
  let embed = new Discord.RichEmbed()
  .addField(message.author.ping);
  message.channel.send(embed)
+ message.delete().catch(O_o=>{});
      console.log(`${message.author.tag} השתמש בפקודת פינג!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודה פינג!`);
 }
@@ -88,7 +111,7 @@ if(cmd === `${prefix}פינג`){
 
   console.log(`${message.author.tag} ניסה להעיף מישהו!`);
   return logsCommands.send(`${message.author.tag} ניסה להעיף מישהו!`);
-
+  message.delete().catch(O_o=>{});
   let kickChannel = message.guild.channels.find(`name`, "kicks-and-bans")
   if(!kickChannel) return message.channel.send("לא הצלחתי למצוא חדר kicks-and-bans!")
 
@@ -129,9 +152,9 @@ if(cmd === `${prefix}פינג`){
      
 
 
-      if(!reason) return message.channel.send("בבקשה ציין את סיבת הדיווח");
+      if(!reason) return message.channel.reply("בבקשה ציין את סיבת הדיווח");
       let reportschannel = message.guild.channels.find(`name`, "reports");
-      if(!reportschannel) return message.channel.send("בבקשה צור חדר reports");
+      if(!reportschannel) return message.channel.reply("בבקשה צור חדר reports");
 
       message.delete().catch(O_o=>{});
       reportschannel.send(reportEmbed);
@@ -155,6 +178,7 @@ if(cmd === `${prefix}פינג`){
 
 
     message.channel.send(embed);
+           message.delete().catch(O_o=>{});
     console.log(`${message.author.tag} השתמש בוולדבע!`);
     return logsCommands.send(`${message.author.tag} השתמש בוולדבע!!`);
 
@@ -177,12 +201,14 @@ if(cmd === `${prefix}פינג`){
 
 
       return message.channel.send(serverembed);
+           message.delete().catch(O_o=>{});
          console.log(`${message.author.tag} השתמש בפקודה מידע על השרת!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודה מידע על השרת!`);
     }
 //simple test command
     if(cmd === `${prefix}שלום`){
       return message.channel.send("שלום לך!");
+           message.delete().catch(O_o=>{});
          console.log(`${message.author.tag} השתמש בפקודה שלום!`);
     return logsCommands.send(`${message.author.tag} שלח לי הודעה פרטית!`);
           }
@@ -198,6 +224,7 @@ if(cmd === (`${prefix}מיאני`)) {
   .addField("ID", bot.user.id)
   .setFooter("נוצר על ידי: avishaidv & NiceGames");
   return message.channel.send(botembed);
+       message.delete().catch(O_o=>{});
           console.log(`${message.author.tag} השתמש בפקודת מי אני!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודת מי אני!`);
 }

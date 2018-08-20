@@ -61,7 +61,7 @@ if(cmd === `${prefix}הזמן`){
   let icon = bot.user.displayAvatarURL;
   let embed = new Discord.RichEmbed()
     .setDescription("הזמן אותי")
-    .addField("מיקמק", `https://discordapp.com/api/oauth2/authorize?client_id=466348486800048149&permissions=8&scope=bot`)
+    .addField("קישור הזמנה", `https://discordapp.com/api/oauth2/authorize?client_id=466348486800048149&permissions=8&scope=bot`)
     .setThumbnail(icon)
       .setColor('RANDOM')
     .setFooter("יוצרי הבוט: avishaiDV & NiceGames");

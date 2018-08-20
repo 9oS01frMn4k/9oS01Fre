@@ -46,13 +46,31 @@ bot.on("message", async message => {
     .addField("Commands", `http://play.mikmak.co.il`)
     .setFooter("יוצרי הבוט: avishaiDV & NiceGames")
     .setColor('RANDOM')
-    .setThumbnail(icon);
+    .setThumbnail(icon)
+    .addField("הזמן אותי", "תכתוב בצאט >הזמן");
      message.delete().catch(O_o=>{});
 
     message.channel.send(embed)
     console.log(`${message.author.tag} ביקש עזרה מהבוט!`);
     return logsCommands.send(`${message.author.tag} ביקש עזרה מהבוט!`);
 }
+ 
+ 
+ //invite
+if(cmd === `${prefix}הזמן`){
+  let icon = bot.user.displayAvatarURL;
+  let embed = new Discord.RichEmbed()
+    .setDescription("הזמן אותי")
+    .addField("מיקמק", `https://discordapp.com/api/oauth2/authorize?client_id=466348486800048149&permissions=8&scope=bot`)
+    .setThumbnail(icon)
+    .setFooter("יוצרי הבוט: avishaiDV & NiceGames");
+    message.delete().catch(O_o=>{});
+  message.channel.send(embed)
+
+  console.log(`${message.author.tag} ביקש להזמין אותי!`);
+  return logsCommands.send(`${message.author.tag} ביקש להזמין אותי!`);
+}
+ 
  
   //profile image command
 if(cmd === `${prefix}פרופיל`){
@@ -133,38 +151,6 @@ if(cmd === `${prefix}פינג`){
     return logsCommands.send(`${message.author.tag} השתמש בפקודה חזור אחרי`);
   }
  
-//report command
-    if(cmd === `${prefix}דווח`){
-      let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-      if(!rUser) return message.channel.send(`${message.author}לא ניתן למצוא משתמשים.`);
-      let reason = args.join(" ").slice(22);
-
-      let reportEmbed = new Discord.RichEmbed()
-      .setDescription("דיווח")
-      .setColor("#e82c1b")
-      .setThumbnail(message.author.displayAvatarURL)
-      .addField("משתמש מדווח", `${rUser} ID המשתמש המדווח: ${rUser.id}`)
-      .addField("מדווח", `${message.author} ID המדווח ${message.author.id}`)
-      .addField("חדר", message.channel)
-      .addField("זמן הדיווח", message.createdAt)
-      .addField("סיבה", reason)
-       .setFooter("נוצר על ידי: avishaidv & NiceGames");
-     
-
-
-      if(!reason) return message.channel.reply("בבקשה ציין את סיבת הדיווח");
-      let reportschannel = message.guild.channels.find(`name`, "reports");
-      if(!reportschannel) return message.channel.reply("בבקשה צור חדר reports");
-
-      message.delete().catch(O_o=>{});
-      reportschannel.send(reportEmbed);
-      console.log(`${message.author.tag} דיווח על משתמש!`);
-      return logsCommands.send(`${message.author.tag} דיווח על משתמש!`);
-      return;
-
-      message.channel.send(reportEmbed);
-      return;
-    }
 
 //voldba
 
@@ -223,38 +209,13 @@ if(cmd === (`${prefix}מיאני`)) {
   .addField("תאריך יצור", bot.user.createdAt)
   .addField("ID", bot.user.id)
   .setFooter("נוצר על ידי: avishaidv & NiceGames");
+ 
       message.delete().catch(O_o=>{});
   return message.channel.send(botembed);
           console.log(`${message.author.tag} השתמש בפקודת מי אני!`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודת מי אני!`);
 }
 
-//spotify command
-      if(cmd === `${prefix}ספוטיפיי`){
-          let user = message.mentions.users.first() || message.author;
-
-          if (user.presence.activity !== null && user.presence.activity.type === 'LISTENING' && user.presence.activity.name === 'Spotify'
-      && user.presence.activity.assets !== null) {
-          let trackIMG = `https://i.scdn.co/image/${user.presence.activity.assets.largeImage.slice(8)}`;
-          let trackURL = `https://open.spotify.com/track/${user.presence.activity.syncID}`;
-          let trackName = user.presence.activity.details;
-          let trackAuthor = user.presence.activity.state;
-          let trackAlbum = user.presence.activity.assets.largeText;
-
-          const embed = new Discord.RichEmbed()
-          .setAuthor('מידע על השיר בספוטיפיי', 'https://cdn.discordapp.com/emojis/408668371039682560')
-          .setColor("#1abc48")
-          .setThumbnail(trackIMG)
-          .addField('שם השיר', trackName, true)
-          .addField('אלבום', trackAlbum, true)
-          .addField('יוצר', trackAuthor, false)
-          .addField('קישור להאזנה בספוטיפיי:', `${trackURL}`, false)
-          .setFooter("יוצרי הבוט: avishaiDV#0069")
-          message.channel.send(embed)
-      } else {
-          message.channel.send('המשתמש לא שומע מוזיקה כרגע או שספוטיפיי לא דלוק בפליינג!');
-  }
-  }
   
   
 });

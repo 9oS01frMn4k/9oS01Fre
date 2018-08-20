@@ -63,6 +63,7 @@ if(cmd === `${prefix}הזמן`){
     .setDescription("הזמן אותי")
     .addField("מיקמק", `https://discordapp.com/api/oauth2/authorize?client_id=466348486800048149&permissions=8&scope=bot`)
     .setThumbnail(icon)
+      .setColor('RANDOM')
     .setFooter("יוצרי הבוט: avishaiDV & NiceGames");
     message.delete().catch(O_o=>{});
   message.channel.send(embed)

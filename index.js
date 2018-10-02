@@ -112,19 +112,6 @@ if(cmd === `${prefix}פינג` || cmd === `${prefix}ping`){
 }
 
 //kick command - NEED FIX
-  if(cmd === `${prefix}העף` || cmd === `${prefix}kick`){
-     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-     if(!kUser) return message.channel.send("לא הצלחתי למצוא משתמש!");
-     let kReason = args.join(" ").slice(22);
-     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אין לך גישות!")
-     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אתה לא יכול להעיף אותו!");
-  .setFooter("נוצר על ידי: avishaidv & NiceGames");
-
-  console.log(`${message.author.tag} ניסה להעיף מישהו!`);
-  return logsCommands.send(`${message.author.tag} ניסה להעיף מישהו!`);
-  message.delete().catch(O_o=>{});
-    return;
-  }
 
  //say command
   if (cmd === `${prefix}תגיד` || cmd === `${prefix}say`){

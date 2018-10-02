@@ -1,4 +1,4 @@
-# FRI6 BOT | >HELP
+# FLI6 BOT | >HELP
 
 Prefix: >
 

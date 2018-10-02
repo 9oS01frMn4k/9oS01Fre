@@ -37,7 +37,7 @@ bot.on("message", async message => {
  
  
  //help
-  if(cmd === `${prefix}עזרה`){
+  if(cmd === `${prefix}עזרה` || cmd === `${prefix}help`){
     let icon = bot.user.displayAvatarURL;
     let embed =  new Discord.RichEmbed()
     .setDescription("עזרה")
@@ -57,7 +57,7 @@ bot.on("message", async message => {
  
  
  //invite
-if(cmd === `${prefix}הזמן`){
+if(cmd === `${prefix}הזמן` || cmd === `${prefix}invite`){
   let icon = bot.user.displayAvatarURL;
   let embed = new Discord.RichEmbed()
     .setDescription("הזמן אותי")
@@ -74,7 +74,7 @@ if(cmd === `${prefix}הזמן`){
  
  
   //profile image command
-if(cmd === `${prefix}פרופיל`){
+if(cmd === `${prefix}פרופיל` || cmd === `${prefix}profile`){
   let user = message.mentions.users.first() || message.author;
   let embed = new Discord.RichEmbed()
   .setAuthor(`${user.username}`)
@@ -102,7 +102,7 @@ if(cmd === `${prefix}פרופיל`){
 
 
 //ping
-if(cmd === `${prefix}פינג`){
+if(cmd === `${prefix}פינג` || cmd === `${prefix}ping`){
  let embed = new Discord.RichEmbed()
  .addField(message.author.ping);
      message.delete().catch(O_o=>{});
@@ -111,42 +111,26 @@ if(cmd === `${prefix}פינג`){
     return logsCommands.send(`${message.author.tag} השתמש בפקודה פינג!`);
 }
 
-//kick command
-  if(cmd === `${prefix}העף`){
+//kick command - NEED FIX
+  if(cmd === `${prefix}העף` || cmd === `${prefix}kick`){
      let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
      if(!kUser) return message.channel.send("לא הצלחתי למצוא משתמש!");
      let kReason = args.join(" ").slice(22);
      if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אין לך גישות!")
      if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("אתה לא יכול להעיף אותו!");
-  let kickEmbed = new Discord.MessageEmbed()
-  .setDescription("~הרחקה~")
-  .setColor("#42f4e8")
-  .addField("משתמש מורחק", `${kUser} ID ${kUser.id}`)
-  .addField("מרחיק", `<@${message.author.id}> ID ${message.author.id}`)
-  .addField("חדר מרחיק", message.channel)
-  .addField("זמן הרחקה", message.createdAt)
-  .addField("סיבה", kReason)
   .setFooter("נוצר על ידי: avishaidv & NiceGames");
 
   console.log(`${message.author.tag} ניסה להעיף מישהו!`);
   return logsCommands.send(`${message.author.tag} ניסה להעיף מישהו!`);
   message.delete().catch(O_o=>{});
-  let kickChannel = message.guild.channels.find(`name`, "kicks-and-bans")
-  if(!kickChannel) return message.channel.send("לא הצלחתי למצוא חדר kicks-and-bans!")
-
-    message.guild.member(kUser).kick(kReason);
-    KickChannel.send(kickEmbed);
     return;
   }
 
  //say command
-  if (cmd === `${prefix}תגיד`){
-    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
-    // To get the "message" itself we join the `args` back into a string with spaces: 
+  if (cmd === `${prefix}תגיד` || cmd === `${prefix}say`){
     const sayMessage = args.join(" ");
-    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
     message.delete().catch(O_o=>{}); 
-    // And we get the bot to say the thing: 
+    if(!sayMessage) return message.channel.send(`${message.author} אתה צריך להגיד משהו!`)
     message.channel.send(sayMessage);
             console.log(`${message.author.tag} השתמש בפקודת חזור אחרי`);
     return logsCommands.send(`${message.author.tag} השתמש בפקודה חזור אחרי`);
@@ -155,7 +139,7 @@ if(cmd === `${prefix}פינג`){
 
 //voldba
 
-    if(cmd=== `${prefix}וולדבע`){
+    if(cmd=== `${prefix}וולדבע` || cmd === `${prefix}voldba`){
       let embed = new Discord.RichEmbed()
 
     .setDescription("איסטראג וולדבעי במיוחד!")
@@ -173,7 +157,7 @@ if(cmd === `${prefix}פינג`){
 
 
 //server info
-    if(cmd === `${prefix}שרת`){
+    if(cmd === `${prefix}שרת` || cmd === `${prefix}server`){
       let sicon = message.guild.iconURL;
       let serverembed = new Discord.RichEmbed()
       .setDescription("מידע השרת")
@@ -193,14 +177,14 @@ if(cmd === `${prefix}פינג`){
     return logsCommands.send(`${message.author.tag} השתמש בפקודה מידע על השרת!`);
     }
 //simple test command
-    if(cmd === `${prefix}שלום`){
+    if(cmd === `${prefix}שלום` ){
       message.delete().catch(O_o=>{});
       return message.channel.send("שלום לך!");
          console.log(`${message.author.tag} השתמש בפקודה שלום!`);
     return logsCommands.send(`${message.author.tag} שלח לי הודעה פרטית!`);
           }
 //bot info
-if(cmd === (`${prefix}מיאני`)) {
+if(cmd === (`${prefix}מיאני` || cmd === `${prefix}botinfo`) {
   let bicon = bot.user.displayAvatarURL;
   let botembed = new Discord.RichEmbed()
   .setDescription("מידע על הבוט")

@@ -171,7 +171,7 @@ if(cmd === `${prefix}פינג` || cmd === `${prefix}ping`){
     return logsCommands.send(`${message.author.tag} שלח לי הודעה פרטית!`);
           }
 //bot info
-if(cmd === (`${prefix}מיאני` || cmd === `${prefix}botinfo`){
+if(cmd === `${prefix}מיאני` || cmd === `${prefix}botinfo`){
   let bicon = bot.user.displayAvatarURL;
   let botembed = new Discord.RichEmbed()
   .setDescription("מידע על הבוט")

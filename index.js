@@ -209,7 +209,7 @@ message.channel.send(embed)
 }
 
 //randon number
-if(cmd === `${prefix}number` || `${prefix}מספר`){
+if(cmd === `${prefix}number` || cmd === `${prefix}מספר`){
  message.channel.send("message.author.tag" + Math.floor(Math.random() * 100 + 1))
 }
   

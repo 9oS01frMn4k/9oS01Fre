@@ -215,12 +215,9 @@ if(cmd === `${prefix}number` || `${prefix}מספר`){
 .setAuthor(message.author.tag)
 .setColor("#a15eff")
 .addField("המספר :game_die: ", [result]);
-//        message.delete().catch(O_o=>{});
+
 message.channel.send(embed)
-     console.log(`${message.author.tag} הגריל מספר רנדומלי!`);
-    return logsCommands.send(`${message.author.tag} הגריל מספר רנדומלי!`); 
 }
-  
   
 });
 bot.login(process.env.BOT_TOKEN);

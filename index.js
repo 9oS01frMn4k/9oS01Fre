@@ -210,7 +210,7 @@ message.channel.send(embed)
 
 //randon number
 if(cmd === `${prefix}number` || `${prefix}מספר`){
-  let result = Math.floor(Math.random() * 100) + 1;
+  let result = Math.floor(Math.random() * 100.length) + 1;
   let embed = new Discord.RichEmbed()
 .setAuthor(message.author.tag)
 .setColor("#a15eff")

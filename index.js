@@ -201,10 +201,10 @@ let embed = new Discord.RichEmbed()
 .setColor("#a15eff")
 .addField("שאלה :thinking: ", question)
 .addField("תשובה :fire: ", Replies[result]);
+        message.delete().catch(O_o=>{});
     console.log(`${message.author.tag} שאל את הבדולח שאלה!`);
     return logsCommands.send(`${message.author.tag} שאל את הבדולח שאלה!`);
-       message.delete().catch(O_o=>{});
-message.channel.send(embed);
+message.channel.send(embed)
 }
 
 //randon number
@@ -214,10 +214,10 @@ if(cmd === `${prefix}number` || `${prefix}מספר`){
 .setAuthor(message.author.tag)
 .setColor("#a15eff")
 .addField("המספר :game_die: ", [result]);
+        message.delete().catch(O_o=>{});
     console.log(`${message.author.tag} הגריל מספר רנדומלי!`);
     return logsCommands.send(`${message.author.tag} הגריל מספר רנדומלי!`); 
-       message.delete().catch(O_o=>{});
-message.channel.send(embed);
+message.channel.send(embed)
 }
   
   

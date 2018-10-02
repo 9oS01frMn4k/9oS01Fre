@@ -210,13 +210,7 @@ message.channel.send(embed)
 
 //randon number
 if(cmd === `${prefix}number` || `${prefix}מספר`){
-  let result = Math.floor(Math.random() * 100 + 1));
-  let embed = new Discord.RichEmbed()
-.setAuthor(message.author.tag)
-.setColor("#a15eff")
-.addField("המספר :game_die: ", [result]);
-
-message.channel.send(embed)
+ message.channel.send("message.author.tag" + Math.floor(Math.random() * 100 + 1))
 }
   
 });

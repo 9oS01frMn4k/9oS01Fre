@@ -185,9 +185,40 @@ if(cmd === `${prefix}מיאני` || cmd === `${prefix}botinfo`){
       message.delete().catch(O_o=>{});
   return message.channel.send(botembed);
           console.log(`${message.author.tag} השתמש בפקודת מי אני!`);
-    return logsCommands.send(`${message.author.tag} השתמש בפקודת מי אני!`);
+    return logsCommands.send(`${message.author.tag} השתמש בפקודת מי אני!`); 
 }
 
+ 
+ //8Ball
+if(cmd === `${prefix}8ball` || cmd === `${prefix}בדולח`){
+if(!args[1]) return message.reply("זאת לא שאלה! :angry:");
+let Replies = ["כן", "לא", "בטח!", "ברוררררר", "לא חושב", "אני עסוק, שאל אותי אחר כך", "לא אחי", "בארור אחיי", "אממ", "אולי", "התשובה היא 3", "נע", "שטוכ", "שאלה מעניינת :)"];
+
+let result = Math.floor((Math.random() * Replies.length));
+let question = args.slice(0).join(" ");
+let embed = new Discord.RichEmbed()
+.setAuthor(message.author.tag)
+.setColor("#a15eff")
+.addField("שאלה :thinking: ", question)
+.addField("תשובה :fire: ", Replies[result]);
+    console.log(`${message.author.tag} שאל את הבדולח שאלה!`);
+    return logsCommands.send(`${message.author.tag} שאל את הבדולח שאלה!`);
+       message.delete().catch(O_o=>{});
+message.channel.send(embed);
+}
+
+//randon number
+if(cmd === `${prefix}number` || `${prefix}מספר`){
+  let result = Math.floor(Math.random() * 100) + 1;
+  let embed = new Discord.RichEmbed()
+.setAuthor(message.author.tag)
+.setColor("#a15eff")
+.addField("המספר :game_die: ", [result]);
+    console.log(`${message.author.tag} הגריל מספר רנדומלי!`);
+    return logsCommands.send(`${message.author.tag} הגריל מספר רנדומלי!`); 
+       message.delete().catch(O_o=>{});
+message.channel.send(embed);
+}
   
   
 });

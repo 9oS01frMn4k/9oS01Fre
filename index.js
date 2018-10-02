@@ -43,7 +43,7 @@ bot.on("message", async message => {
     .setDescription("עזרה")
     .setThumbnail(bot.user.displayAvatarURL)
     .addField("prefix", `>`)
-    .addField("Commands", `http://play.mikmak.co.il`)
+    .addField("Commands", `https://github.com/9oS01frMn4k/9oS01Fre/blob/master/README.md`)
     .setFooter("יוצרי הבוט: avishaiDV & NiceGames")
     .setColor('RANDOM')
     .setThumbnail(icon)

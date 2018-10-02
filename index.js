@@ -202,9 +202,10 @@ let embed = new Discord.RichEmbed()
 .addField("שאלה :thinking: ", question)
 .addField("תשובה :fire: ", Replies[result]);
         message.delete().catch(O_o=>{});
-    console.log(`${message.author.tag} שאל את הבדולח שאלה!`);
-    return logsCommands.send(`${message.author.tag} שאל את הבדולח שאלה!`);
+
 message.channel.send(embed)
+     console.log(`${message.author.tag} שאל את הבדולח שאלה!`);
+    return logsCommands.send(`${message.author.tag} שאל את הבדולח שאלה!`);
 }
 
 //randon number
@@ -215,9 +216,9 @@ if(cmd === `${prefix}number` || `${prefix}מספר`){
 .setColor("#a15eff")
 .addField("המספר :game_die: ", [result]);
         message.delete().catch(O_o=>{});
-    console.log(`${message.author.tag} הגריל מספר רנדומלי!`);
-    return logsCommands.send(`${message.author.tag} הגריל מספר רנדומלי!`); 
 message.channel.send(embed)
+     console.log(`${message.author.tag} הגריל מספר רנדומלי!`);
+    return logsCommands.send(`${message.author.tag} הגריל מספר רנדומלי!`); 
 }
   
   

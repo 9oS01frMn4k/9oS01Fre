@@ -210,7 +210,7 @@ message.channel.send(embed)
 
 //randon number
 if(cmd === `${prefix}number` || cmd === `${prefix}מספר`){
- message.channel.send("message.author.tag" + Math.floor(Math.random() * 100 + 1))
+ message.channel.send("Your number is:" + Math.floor(Math.random() * 100 + 1))
 }
   
 });

@@ -223,7 +223,7 @@ message.channel.send(embed)
  
   //challenge
 if(cmd === `${prefix}אתגר` || cmd === `${prefix}challenge`){
-let challenge = ["תתקשר לחבר בדיסקורד ותדבר על מיקמק חמש דקות :joy:  ", "לשלוח לחבר רנדומלי בפרטי יש לי קקי :poop: ", "תדבר רק באימוג'ים במשך 2 דקות :stuck_out_tongue:  "];
+let challenge = ["תתקשר לחבר בדיסקורד ותדבר על מיקמק חמש דקות :joy:  ", "לשלוח לחבר רנדומלי בפרטי יש לי קקי :poop: ", "תדבר רק באימוג'ים במשך 2 דקות :stuck_out_tongue: ", "לעשות אירייפ למישהו רנדומלי בדיסקורד :open_mouth: ", "תשיר שבת בבוקר לילד רנדומלי בדיסקורד :joy: ", "למתוח חבר שאתה לא רוצה לדבר איתו יותר ;)", "כגנ", " :joy: להגיד אמאשך בסוף כל הודעה במשך חמש דקות"];
 let result = Math.floor((Math.random() * challenge.length));
 let embed = new Discord.RichEmbed()
 .setAuthor(message.author.tag)

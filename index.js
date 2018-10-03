@@ -220,6 +220,20 @@ message.channel.send(embed)
       console.log(`${message.author.tag} יצר מספר רנדומלי!`);
     return logsCommands.send(`${message.author.tag} יצר מספר רנדומלי!`);
 }
+ 
+  //challenge
+if(cmd === `${prefix}אתגר` || cmd === `${prefix}challenge`){
+let challenge = ["תתקשר לחבר בדיסקורד ותדבר על מיקמק חמש דקות :joy:  ", "לשלוח לחבר רנדומלי בפרטי יש לי קקי :poop: ", "תדבר רק באימוג'ים במשך 2 דקות :stuck_out_tongue:  "];
+let result = Math.floor((Math.random() * challenge.length));
+let embed = new Discord.RichEmbed()
+.setAuthor(message.author.tag)
+.setColor("#84ff8e")
+.addField("your challenge is :scream: :", challenge[result]);
+        message.delete().catch(O_o=>{});
+message.channel.send(embed)
+     console.log(`${message.author.tag} ביקש אתגר!`);
+    return logsCommands.send(`${message.author.tag} ביקש אתגר!`);
+}
   
 });
 bot.login(process.env.BOT_TOKEN);

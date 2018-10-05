@@ -235,6 +235,20 @@ message.channel.send(embed)
      console.log(`${message.author.tag} ביקש אתגר!`);
     return logsCommands.send(`${message.author.tag} ביקש אתגר!`);
 }
+ 
+   //vegetables
+if(cmd === `${prefix}ירק` || cmd === `${prefix}vegetable`){
+let vegetable = [" 🥒 מלפפון", " 🍅 עגבניה", "ברוקולי 🥦", "סלרי 🌱 " , "פלפל 🌶", "עגבניות שרי🍅🍅 ", "חציל 🍆 ", "אבוקדו 🥑 ", "תירס 🌽 ", "תפוח אדמה 🥔 ", "גזר 🥕"];
+let result = Math.floor((Math.random() * vegetable.length));
+let embed = new Discord.RichEmbed()
+.setAuthor(message.author.tag)
+.setColor("#f4e542")
+.addField("your vegtable is :scream: :", vegetable[result]);
+        message.delete().catch(O_o=>{});
+message.channel.send(embed)
+     console.log(`${message.author.tag} ביקש ירק!`);
+    return logsCommands.send(`${message.author.tag} ביקש ירק!`);
+}
   
 });
 bot.login(process.env.BOT_TOKEN);

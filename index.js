@@ -48,11 +48,9 @@ bot.on("message", async message => {
     .setColor('RANDOM')
     .setThumbnail(icon)
     .addField("הזמן אותי", "תכתוב בצאט >הזמן");
-     message.delete().catch(O_o=>{});
-
     message.channel.send(embed)
-    console.log(`${message.author.tag} ביקש עזרה מהבוט!`);
-    return logsCommands.send(`${message.author.tag} ביקש עזרה מהבוט!`);
+    console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | ביקש עזרה מהבוט!`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | ביקש עזרה מהבוט!`);
 }
  
  
@@ -65,11 +63,10 @@ if(cmd === `${prefix}הזמן` || cmd === `${prefix}invite`){
     .setThumbnail(icon)
       .setColor('RANDOM')
     .setFooter("יוצרי הבוט: avishaiDV & NiceGames");
-    message.delete().catch(O_o=>{});
   message.channel.send(embed)
 
-  console.log(`${message.author.tag} ביקש להזמין אותי!`);
-  return logsCommands.send(`${message.author.tag} ביקש להזמין אותי!`);
+  console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | ביקש להזמין אותי!`);
+  return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | ביקש להזמין אותי!`);
 }
  
  
@@ -81,35 +78,15 @@ if(cmd === `${prefix}פרופיל` || cmd === `${prefix}profile`){
   .setImage(user.displayAvatarURL)
   .setColor('RANDOM')
   .setFooter(`יוצרי הבוט: avishaiDV & NiceGames`);
-   message.delete().catch(O_o=>{});
   message.channel.send(embed)
 
-          console.log(`${message.author.tag} השתמש בפקודה פרופיל!`);
-    return logsCommands.send(`${message.author.tag} השתמש בפקודה פרופיל!`);
+          console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בפקודה פרופיל!`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בפקודה פרופיל!`);
 }
 
-//test
-    if(cmd === `${prefix}test`){
-      let embed = new Discord.RichEmbed()
-      .setThumbnail()
-      message.delete().catch(O_o=>{});
-      message.channel.send(embed)
-         console.log(`${message.author.tag} השתמש בפקודת נסיון!`);
-    return logsCommands.send(`${message.author.tag} השתמש בפקודת נסיון!`);
-
-    }
 
 
 
-//ping
-if(cmd === `${prefix}פינג` || cmd === `${prefix}ping`){
- let embed = new Discord.RichEmbed()
- .addField(message.author.ping);
-     message.delete().catch(O_o=>{});
- message.channel.send(embed)
-     console.log(`${message.author.tag} השתמש בפקודת פינג!`);
-    return logsCommands.send(`${message.author.tag} השתמש בפקודה פינג!`);
-}
 
 //kick command - NEED FIX
 
@@ -119,8 +96,8 @@ if(cmd === `${prefix}פינג` || cmd === `${prefix}ping`){
     message.delete().catch(O_o=>{}); 
     if(!sayMessage) return message.channel.send(`${message.author} אתה צריך להגיד משהו!`)
     message.channel.send(sayMessage);
-            console.log(`${message.author.tag} השתמש בפקודת חזור אחרי`);
-    return logsCommands.send(`${message.author.tag} השתמש בפקודה חזור אחרי`);
+            console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בפקודת חזור אחרי`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בפקודה חזור אחרי`);
   }
  
 
@@ -128,17 +105,13 @@ if(cmd === `${prefix}פינג` || cmd === `${prefix}ping`){
 
     if(cmd=== `${prefix}וולדבע` || cmd === `${prefix}voldba`){
       let embed = new Discord.RichEmbed()
-
     .setDescription("איסטראג וולדבעי במיוחד!")
     .addField("וולדבע נודר!", message.createdAt)
     .setColor('RANDOM')
    .setFooter("נוצר על ידי: avishaidv & NiceGames");
-     message.delete().catch(O_o=>{});
-
     message.channel.send(embed);
-
-    console.log(`${message.author.tag} השתמש בוולדבע!`);
-    return logsCommands.send(`${message.author.tag} השתמש בוולדבע!!`);
+    console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בוולדבע!`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בוולדבע!!`);
 
     }
 
@@ -156,19 +129,16 @@ if(cmd === `${prefix}פינג` || cmd === `${prefix}ping`){
       .addField("מספר אנשים בשרת", message.guild.memberCount)
       .addField("ID", message.guild.id)
       .setFooter("נוצר על ידי: avishaidv & NiceGames");
-
-          message.delete().catch(O_o=>{});
-
       return message.channel.send(serverembed);
-         console.log(`${message.author.tag} השתמש בפקודה מידע על השרת!`);
-    return logsCommands.send(`${message.author.tag} השתמש בפקודה מידע על השרת!`);
+         console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בפקודה מידע על השרת!`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בפקודה מידע על השרת!`);
     }
 //simple test command
     if(cmd === `${prefix}שלום` ){
       message.delete().catch(O_o=>{});
       return message.channel.send("שלום לך!");
-         console.log(`${message.author.tag} השתמש בפקודה שלום!`);
-    return logsCommands.send(`${message.author.tag} שלח לי הודעה פרטית!`);
+         console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בפקודה שלום!`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | שלח לי הודעה פרטית!`);
           }
 //bot info
 if(cmd === `${prefix}מיאני` || cmd === `${prefix}botinfo`){
@@ -181,11 +151,9 @@ if(cmd === `${prefix}מיאני` || cmd === `${prefix}botinfo`){
   .addField("תאריך יצור", bot.user.createdAt)
   .addField("ID", bot.user.id)
   .setFooter("נוצר על ידי: avishaidv & NiceGames");
- 
-      message.delete().catch(O_o=>{});
   return message.channel.send(botembed);
-          console.log(`${message.author.tag} השתמש בפקודת מי אני!`);
-    return logsCommands.send(`${message.author.tag} השתמש בפקודת מי אני!`); 
+          console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בפקודת מי אני!`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | השתמש בפקודת מי אני!`); 
 }
 
  
@@ -201,11 +169,9 @@ let embed = new Discord.RichEmbed()
 .setColor("#a15eff")
 .addField("שאלה :thinking: ", question)
 .addField("תשובה :fire: ", Replies[result]);
-        message.delete().catch(O_o=>{});
-
 message.channel.send(embed)
-     console.log(`${message.author.tag} שאל את הבדולח שאלה!`);
-    return logsCommands.send(`${message.author.tag} שאל את הבדולח שאלה!`);
+     console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | שאל את הבדולח שאלה!`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | שאל את הבדולח שאלה!`);
 }
 
 //randon number
@@ -215,10 +181,9 @@ if(cmd === `${prefix}number` || cmd === `${prefix}מספר`){
 .setAuthor(message.author.tag)
 .setColor("#a15eff")
 .addField("המספר :game_die: ", [result]);
-         message.delete().catch(O_o=>{});
 message.channel.send(embed)
-      console.log(`${message.author.tag} יצר מספר רנדומלי!`);
-    return logsCommands.send(`${message.author.tag} יצר מספר רנדומלי!`);
+      console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | יצר מספר רנדומלי!`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | יצר מספר רנדומלי!`);
 }
  
   //challenge
@@ -230,10 +195,9 @@ let embed = new Discord.RichEmbed()
 .setAuthor(message.author.tag)
 .setColor("#84ff8e")
 .addField("your challenge is :scream: :", challenge[result]);
-        message.delete().catch(O_o=>{});
 message.channel.send(embed)
-     console.log(`${message.author.tag} ביקש אתגר!`);
-    return logsCommands.send(`${message.author.tag} ביקש אתגר!`);
+     console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | ביקש אתגר!`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | ביקש אתגר!`);
 }
  
    //vegetables
@@ -244,10 +208,9 @@ let embed = new Discord.RichEmbed()
 .setAuthor(message.author.tag)
 .setColor("#f4e542")
 .addField("your vegtable is :scream: :", vegetable[result]);
-        message.delete().catch(O_o=>{});
 message.channel.send(embed)
-     console.log(`${message.author.tag} ביקש ירק!`);
-    return logsCommands.send(`${message.author.tag} ביקש ירק!`);
+     console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | ביקש ירק!`);
+    return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | ביקש ירק!`);
 }
   
 });

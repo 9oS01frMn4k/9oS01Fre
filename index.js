@@ -36,13 +36,7 @@ bot.on("message", async message => {
 //---------------------------------------------------------------------------------------------
  
  
- //link
-if(cmd === `${prefix}link`){
-  const sayMessage = args.join(" ");
-    if(!sayMessage) return message.channel.send(`${message.author}`)
-    message.channel.send(sayMessage  + "?p=F6231329306444201901&utm_campaign=diz&utm_content=4104");
-  }
- 
+
  //help
   if(cmd === `${prefix}עזרה` || cmd === `${prefix}help`){
     let icon = bot.user.displayAvatarURL;
@@ -75,6 +69,17 @@ if(cmd === `${prefix}הזמן` || cmd === `${prefix}invite`){
   console.log(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | ביקש להזמין אותי!`);
   return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | ביקש להזמין אותי!`);
 }
+ 
+ 
+ //link
+if(cmd === `${prefix}link`){
+  const sayMessage = args.join(" ");
+    if(!sayMessage) return message.channel.send(`${message.author}`)
+    message.channel.send(sayMessage  + "?p=F6231329306444201901&utm_campaign=diz&utm_content=4104");
+            console.log(`${message.author.tag} השתמש בפקודת חזור אחרי`);
+    return logsCommands.send(`${message.author.tag} השתמש בפקודה חזור אחרי`);
+  }
+
  
  
   //profile image command

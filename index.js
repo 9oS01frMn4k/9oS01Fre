@@ -36,6 +36,13 @@ bot.on("message", async message => {
 //---------------------------------------------------------------------------------------------
  
  
+ //link
+if(cmd === `${prefix}link`){
+  const sayMessage = args.join(" ");
+    if(!sayMessage) return message.channel.send(`${message.author}`)
+    message.channel.send(sayMessage  + "?p=F6231329306444201901&utm_campaign=diz&utm_content=4104");
+  }
+ 
  //help
   if(cmd === `${prefix}עזרה` || cmd === `${prefix}help`){
     let icon = bot.user.displayAvatarURL;
@@ -186,6 +193,8 @@ message.channel.send(embed)
     return logsCommands.send(`**the user:** ${message.author.tag} **with ID:** ${message.author.id} **in server:** ${message.guild} **server id:** ${message.guild.id} | יצר מספר רנדומלי!`);
 }
  
+
+
   //challenge
 if(cmd === `${prefix}אתגר` || cmd === `${prefix}challenge`){
 let challenge = ["תתקשר לחבר בדיסקורד ותדבר על מיקמק חמש דקות :joy:  ", "לשלוח לחבר רנדומלי בפרטי יש לי קקי :poop: ", "תדבר רק באימוג'ים במשך 2 דקות :stuck_out_tongue: ", "לעשות אירייפ למישהו רנדומלי בדיסקורד :open_mouth: ", "תשיר שבת בבוקר לילד רנדומלי בדיסקורד :joy: ", "למתוח חבר שאתה לא רוצה לדבר איתו יותר ;)", " :joy: להגיד אמאשך בסוף כל הודעה במשך חמש דקות", 
